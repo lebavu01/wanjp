@@ -1,0 +1,16 @@
+.breadcrumb {
+  list-style: none;
+  display: flex;
+  flex-flow: wrap;
+  margin-bottom: 1rem;
+  li {
+    font-size: 1.4rem;
+    &:not(:last-child) {
+      &::after {
+        content: '>';
+        font-size: 1.4rem;
+        margin: 0.3rem;
+      }
+    }
+  }
+}
