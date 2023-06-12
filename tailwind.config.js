@@ -18,8 +18,15 @@ module.exports = {
       }
     },
     fontSize: {
-      l: [
+      s: [
         '2rem',
+        {
+          lineHeight: '1.3',
+          fontWeight: '500'
+        }
+      ],
+      l: [
+        '2.2rem',
         {
           lineHeight: '1.3',
           fontWeight: '500'
@@ -33,7 +40,7 @@ module.exports = {
         }
       ],
       '3xl': [
-        '1.875rem',
+        '3.2rem',
         {
           lineHeight: '2.25rem',
           letterSpacing: '-0.02em',

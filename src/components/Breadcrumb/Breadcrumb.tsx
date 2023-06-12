@@ -8,7 +8,7 @@ function Breadcrumb() {
     .split('/')
     .filter((pathname) => pathname !== '')
     .map((pathname) => pathname.replace(/-/g, ' '))
-
+  const pathnamelink = location.pathname.split('/').filter((pathname) => pathname !== '')
   return (
     <nav aria-label='breadcrumb'>
       <ol className={styles.breadcrumb}>
@@ -17,7 +17,7 @@ function Breadcrumb() {
         </li>
         {pathnames.map((pathname, index) => (
           <li key={index}>
-            <Link to={`/${pathnames.slice(0, index + 1).join('/')}`}>{pathname}</Link>
+            <Link to={`/${pathnamelink.slice(0, index + 1).join('/')}`}>{pathname}</Link>
           </li>
         ))}
       </ol>
