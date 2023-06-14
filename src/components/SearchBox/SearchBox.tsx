@@ -2,11 +2,7 @@ import React from 'react'
 import TextField from '@mui/material/TextField'
 import Stack from '@mui/material/Stack'
 import Autocomplete from '@mui/material/Autocomplete'
-import { styled } from '@mui/material/styles'
 
-const StyledAutocomplete = styled(Autocomplete)(({ theme }) => ({
-  // padding: '.5rem 9px'
-}))
 export default function SearchBox() {
   return (
     <div>

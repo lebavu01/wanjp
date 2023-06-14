@@ -1,12 +1,18 @@
 import React, { useState } from 'react'
 import Breadcrumb from '@/components/Breadcrumb'
 import DataTable from '@/components/DataTable'
-import SearchBox from '@/components/SearchBox'
-import ErrorIcon from '@mui/icons-material/Error'
-import Box from '@/components/SelectItem'
-import Tooltip from '@mui/material/Tooltip'
+import SelectBox from '@/components/SelectItem'
+import Box from '@mui/material/Box'
+import UploadImage from '@/assets/upload.png'
+import Typography from '@mui/material/Typography'
+import Autocomplete from '@/components/Autocomplete'
+import { useTheme } from '@mui/material/styles'
+import { Input } from '@/components/Input/Input'
+import Stack from '@mui/material/Stack'
+import Button from '@mui/material/Button'
 
 export default function SaleOrderSearch() {
+  const theme = useTheme()
   const options = [
     { value: 'A option1', label: 'A Option 1' },
     { value: 'A option2', label: 'A Option 2' },
@@ -29,22 +35,45 @@ export default function SaleOrderSearch() {
       <h2 className='border-grey-df border-b-[1px] border-solid pb-[1.5rem] text-xl'>Sale Order Search</h2>
       <div className='main-layout'>
         <aside className='aside bg-grey-f6 p-8'>
-          <div className='mb-8'>
-            <div className='mb-6 flex flex-wrap items-center justify-between gap-8'>
-              <h3 className='text-l'>Search by Order</h3>
-              <Tooltip title='Want Sales Order ID, Market Order ID, Want Product ID, or Tracking Code' arrow>
-                <ErrorIcon />
-              </Tooltip>
-            </div>
-            <SearchBox />
-          </div>
-          <div>
+          <Autocomplete />
+          <div className='mt-8'>
             <h4 className='text-s'>Filter Search</h4>
-            <Box options={options} label='Marketplace' />
-            <Box options={options2} label='Status' />
-            <Box options={options3} label='Shipping Carrier' />
+            <SelectBox options={options} label='Marketplace' />
+            <SelectBox options={options2} label='Status' />
+            <SelectBox options={options3} label='Shipping Carrier' />
             {/* <Dropdown options={options} selectedOption={selectedOption} onOptionChange={handleOptionChange} /> */}
           </div>
+          <Input id='1' label='Date field' />
+          <Stack spacing={2} direction='row' sx={{ marginTop: 3 }}>
+            <Button sx={{ textTransform: 'capitalize' }} variant='contained'>
+              Search
+            </Button>
+            <Button sx={{ textTransform: 'capitalize' }} variant='contained'>
+              Save
+            </Button>
+            <Button sx={{ textTransform: 'capitalize' }} variant='contained'>
+              Clear
+            </Button>
+          </Stack>
+          <Box
+            sx={{
+              paddingTop: 3,
+              backgroundImage: `linear-gradient(to right, ${theme.palette.color.grey999} 100%,transparent 0%)`,
+              backgroundSize: '10rem 1.5px',
+              backgroundPosition: 'center top',
+              backgroundRepeat: 'no-repeat',
+              marginTop: 3
+            }}
+          >
+            <Box sx={{ display: 'flex', alignItems: 'center', gap: 1, justifyContent: 'center' }}>
+              <Box sx={{ width: '100%', maxWidth: '4rem' }}>
+                <img src={UploadImage} className='w-full' alt='upload' />
+              </Box>
+              <Typography sx={{ textAlign: 'center', maxWidth: '18rem' }} variant='h5' gutterBottom>
+                Sales Order Manual Upload
+              </Typography>
+            </Box>
+          </Box>
         </aside>
         <main className='main-content'>
           <DataTable></DataTable>

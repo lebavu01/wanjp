@@ -26,14 +26,14 @@ module.exports = {
         }
       ],
       l: [
-        '2.2rem',
+        '2.4rem',
         {
           lineHeight: '1.3',
           fontWeight: '500'
         }
       ],
       xl: [
-        '2.4rem',
+        '2.8rem',
         {
           lineHeight: '1.3',
           fontWeight: '500'

@@ -24,9 +24,9 @@ const AccountDropdown = () => {
   }
 
   return (
-    <div className='relative z-10 flex h-[10rem] items-center' ref={dropdownRef}>
+    <div className='relative z-10 ml-8 flex h-[10rem] items-center' ref={dropdownRef}>
       <button
-        className='bg-gray-200 text-gray-800 inline-flex items-center rounded px-4 py-2 font-semibold'
+        className='bg-gray-200 text-gray-800 inline-flex items-center rounded font-semibold'
         onClick={handleToggleDropdown}
       >
         <div className='w-[2.5rem]'>
