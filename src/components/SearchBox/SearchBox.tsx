@@ -1,19 +1,26 @@
 import React from 'react'
-import TextField from '@mui/material/TextField'
-import Stack from '@mui/material/Stack'
-import Autocomplete from '@mui/material/Autocomplete'
+import { Search } from '@mui/icons-material'
+import { FormControl, InputLabel, OutlinedInput, InputAdornment } from '@mui/material'
+import classNames from 'classnames/bind'
+import styles from './SearchBox.module.scss'
+import { Search2Icon } from '@/components/Icons'
+const cx = classNames.bind(styles)
 
-export default function SearchBox() {
+const MyComponent = ({ id, label, placeholder }) => {
   return (
-    <div>
-      <Stack spacing={2} sx={{ width: 300 }}>
-        <StyledAutocomplete
-          id='Search'
-          options={searchData.map((option) => option.title)}
-          renderInput={(params) => <TextField {...params} label='Search' />}
-        />
-      </Stack>
-    </div>
+    <FormControl variant='outlined' className={cx('searchbox')}>
+      <InputLabel htmlFor={id}>{label}</InputLabel>
+      <OutlinedInput
+        id={id}
+        startAdornment={
+          <InputAdornment position='start'>
+            <Search2Icon />
+          </InputAdornment>
+        }
+        placeholder={placeholder}
+      />
+    </FormControl>
   )
 }
-const searchData = [{ title: 'Search save 1' }, { title: 'Search save 2' }, { title: 'Search save 3' }]
+
+export default MyComponent

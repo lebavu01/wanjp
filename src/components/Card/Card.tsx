@@ -1,48 +1,78 @@
+import styles from './Card.module.scss'
+import uploadIcon from '@/assets/upload.png'
+import board from '@/assets/board.png'
+import board1 from '@/assets/board1.png'
+import classNames from 'classnames/bind'
+const cx = classNames.bind(styles)
+
 const CardList = () => {
   const data = [
     {
       id: 1,
       title: 'Sales Orders',
-      imageUrl: '/src/assets/react.svg',
-      description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.'
+      imageUrl: '/src/assets/board.png',
+      description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.',
+      hasUpload: true
     },
     {
       id: 2,
       title: 'Open Orders [name TBD]',
-      imageUrl: '/src/assets/react.svg',
-      description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.'
+      imageUrl: '/src/assets/board.png',
+      description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.',
+      hasUpload: false
     },
     {
       id: 3,
       title: 'Supplier Inventory',
-      imageUrl: '/src/assets/react.svg',
-      description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.'
+      imageUrl: '/src/assets/board.png',
+      description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.',
+      hasUpload: false
     },
     {
       id: 4,
       title: 'Product Inventory',
-      imageUrl: '/src/assets/react.svg',
-      description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.'
+      imageUrl: '/src/assets/board.png',
+      description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.',
+      hasUpload: false
+    },
+    {
+      id: 5,
+      title: 'Product Inventory',
+      imageUrl: '/src/assets/board.png',
+      description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.',
+      hasUpload: false
     }
   ]
 
   return (
-    <div className='mx-auto grid gap-2 sm:grid-cols-2 lg:w-1/2'>
+    <div className={cx('card-list')}>
       {data.map((card) => (
-        <Card key={card.id} title={card.title} imageUrl={card.imageUrl} description={card.description} />
+        <Card
+          key={card.id}
+          title={card.title}
+          imageUrl={card.imageUrl}
+          description={card.description}
+          hasUpload={card.hasUpload}
+        />
       ))}
     </div>
   )
 }
 
-const Card = ({ title, imageUrl, description }) => {
+const Card = ({ title, imageUrl, description, hasUpload }) => {
   return (
-    <div className='card rounded-[1rem] bg-white p-8 shadow-lg transition hover:bg-grey-f6'>
-      <h3 className='mb-2 text-center text-xl'>{title}</h3>
-      <div className='mt-[2rem] h-[4rem] children:mx-auto children:h-full children:w-auto'>
+    <div className={cx('card')}>
+      <div className={cx('card-icon')}>
         <img src={imageUrl} alt={title} />
       </div>
-      <p className='text-gray-600 mt-[2rem]'>{description}</p>
+      <h3 className={cx('card-title')}>{title}</h3>
+      <p className={cx('card-desc')}>{description}</p>
+      {hasUpload && (
+        <div className={cx('card-upload')}>
+          <img src={uploadIcon} className={cx('upload-image')} alt='React logo' />
+          Sales Order Manual Upload
+        </div>
+      )}
     </div>
   )
 }

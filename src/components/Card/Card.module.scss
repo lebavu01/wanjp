@@ -1,0 +1,62 @@
+.card-list {
+  display: flex;
+  margin: calc(-3.5rem / 2) -2.5rem;
+  flex-flow: wrap;
+  justify-content: center;
+  @media (max-width: 1024px) {
+    margin: calc(-3.5rem / 2);
+  }
+}
+.card {
+  width: calc(33.33% - 5rem);
+  margin: calc(3.5rem / 2) 2.5rem;
+  text-align: center;
+  padding: 4rem 2rem;
+  border: 1px solid #dddddd;
+  box-shadow: 0px 0.4rem 0.4rem rgba(0, 0, 0, 0.25);
+  border-radius: 0.5rem;
+  min-height: 30rem;
+  transition: all 0.3s;
+  @media (max-width: 1024px) {
+    width: calc(50% - 3.5rem);
+    margin: calc(3.5rem / 2);
+  }
+  @media (max-width: 767px) {
+    width: calc(100% - 3.5rem);
+  }
+  &:hover,
+  &.active {
+    background: #dddddd;
+  }
+}
+.card-icon {
+  width: 4rem;
+  height: 4rem;
+  margin: 0 auto;
+}
+.card-title {
+  font-size: 2.1rem;
+  line-height: calc(28 / 21);
+  font-weight: 700;
+  margin-top: 3rem;
+}
+.card-desc {
+  font-size: 1.6rem;
+  margin-top: 1.5rem;
+}
+.card-upload {
+  width: fit-content;
+  padding: 1rem 2rem 0;
+  margin: 0 auto;
+  border-top: 1px solid #d2d2d2;
+  margin-top: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  justify-content: center;
+  .upload-image {
+    width: 2.4rem;
+    flex-shrink: 0;
+    height: auto;
+  }
+}

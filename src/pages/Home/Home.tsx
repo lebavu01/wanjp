@@ -1,13 +1,11 @@
 import React from 'react'
-import CardList from '@/components/Card'
+import Card from '@/components/Card'
+
 export default function Home() {
   return (
-    <div>
-      <h2 className='border-grey-df border-b-[1px] border-solid pb-[1.5rem] text-xl'>Home</h2>
-      {/* <PageTitle></PageTitle> */}
-      <div className='py-[4rem]'>
-        <CardList />
-      </div>
+    <div className='md:px-8 md:py-12'>
+      <h3 className='mb-12 text-center text-[2.4rem] font-normal'>What do you want to search for?</h3>
+      <Card></Card>
     </div>
   )
 }

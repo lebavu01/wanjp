@@ -1,0 +1,22 @@
+.searchbox {
+  width: 100%;
+  label {
+    font-size: 1.6rem;
+    text-transform: uppercase;
+    font-weight: 400;
+    margin-bottom: 0.5rem;
+    position: unset;
+    transform: none;
+  }
+  > div {
+    padding-left: 1rem;
+  }
+  input {
+    font-size: 1.2rem;
+    padding: 1rem 1.5rem 1rem 0;
+  }
+  fieldset {
+    border: 1px solid #000;
+    border-radius: 0.5rem;
+  }
+}

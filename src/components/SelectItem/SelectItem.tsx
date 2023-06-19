@@ -2,26 +2,26 @@ import Box from '@mui/material/Box'
 import InputLabel from '@mui/material/InputLabel'
 import FormControl from '@mui/material/FormControl'
 import NativeSelect from '@mui/material/NativeSelect'
-import UnfoldMoreIcon from '@mui/icons-material/UnfoldMore'
+import ExpandMoreIcon from '@mui/icons-material/ExpandMore'
 import { styled } from '@mui/material/styles'
 
-const CustomUnfoldMoreIcon = styled(UnfoldMoreIcon)(({ theme }) => ({
-  fontSize: '1.6rem'
+const CustomExpandMoreIcon = styled(ExpandMoreIcon)(({ theme }) => ({
+  fontSize: '2rem'
 }))
 export function SelectItem({ label, options }) {
   const defaultOption = options.length > 0 ? options[0].value : ''
 
   return (
     <div>
-      <Box sx={{ minWidth: 120, marginTop: 3 }}>
+      <Box sx={{ minWidth: 120, marginTop: '2rem' }}>
         <FormControl fullWidth>
           <InputLabel
             variant='standard'
             htmlFor='uncontrolled-native'
             sx={{
               color: 'black',
-              fontWeight: 500,
-              fontSize: 20,
+              fontWeight: 400,
+              fontSize: '1.96rem',
               marginBottom: 20,
               '+ div, + .MuiInputBase-root': {
                 marginTop: 3,
@@ -34,14 +34,19 @@ export function SelectItem({ label, options }) {
             {label}
           </InputLabel>
           <NativeSelect
-            IconComponent={CustomUnfoldMoreIcon}
+            IconComponent={CustomExpandMoreIcon}
             sx={{
-              border: '1px solid rgba(0, 0, 0, 0.23)',
+              border: '1px solid #000',
               paddingLeft: 1,
-              borderRadius: 1,
+              borderRadius: '.5rem',
               fontSize: '1.4rem',
               background: '#fff',
-              paddingBlock: '7px',
+              padding: '0 0 0 1.5rem',
+              height: '3.6rem',
+              '> select': {
+                padding: 0,
+                fontSize: '1.4rem'
+              },
               '&:before': {
                 display: 'none!important'
               },

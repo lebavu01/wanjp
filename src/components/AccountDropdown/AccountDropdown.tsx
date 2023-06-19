@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react'
-import userImg from '@/assets/profile-user.png'
+import userImg from '@/assets/user.png'
 
 const AccountDropdown = () => {
   const [isOpen, setIsOpen] = useState(false)
@@ -24,12 +24,12 @@ const AccountDropdown = () => {
   }
 
   return (
-    <div className='relative z-10 ml-8 flex h-[10rem] items-center' ref={dropdownRef}>
+    <div className='relative z-10 ml-[2.4rem] flex h-[64px] items-center' ref={dropdownRef}>
       <button
         className='bg-gray-200 text-gray-800 inline-flex items-center rounded font-semibold'
         onClick={handleToggleDropdown}
       >
-        <div className='w-[2.5rem]'>
+        <div className='w-[2.4rem]'>
           <img src={userImg} className='w-full' alt='user' />
         </div>
       </button>
